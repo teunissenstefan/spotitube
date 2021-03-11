@@ -7,6 +7,7 @@ import dev.stefanteunissen.restserver.services.PlaylistService;
 import dev.stefanteunissen.restserver.services.TrackService;
 import dev.stefanteunissen.restserver.services.UserService;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,9 +15,12 @@ import java.net.URI;
 
 @Path("/playlists")
 public class PlaylistResource {
-    public UserService userService = new UserService();
-    public PlaylistService playlistService = new PlaylistService();
-    public TrackService trackService = new TrackService();
+    @Inject
+    public UserService userService;
+    @Inject
+    public PlaylistService playlistService;
+    @Inject
+    public TrackService trackService;
 
     @GET
     @Path("/")

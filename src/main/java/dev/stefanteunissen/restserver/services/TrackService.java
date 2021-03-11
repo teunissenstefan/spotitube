@@ -3,12 +3,14 @@ package dev.stefanteunissen.restserver.services;
 import dev.stefanteunissen.restserver.data.TrackDAO;
 import dev.stefanteunissen.restserver.models.Track;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TrackService {
-    public TrackDAO trackDAO = new TrackDAO();
+    @Inject
+    public TrackDAO trackDAO;
 
     /**
      * Get all tracks from a playlist

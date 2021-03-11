@@ -2,8 +2,11 @@ package dev.stefanteunissen.restserver.services;
 
 import dev.stefanteunissen.restserver.data.TokenDAO;
 
+import javax.inject.Inject;
+
 public class TokenService {
-    public TokenDAO tokenDAO = new TokenDAO();
+    @Inject
+    public TokenDAO tokenDAO;
 
     /**
      * Set the token after logging in

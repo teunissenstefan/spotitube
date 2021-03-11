@@ -2,13 +2,15 @@ package dev.stefanteunissen.restserver.resources;
 
 import dev.stefanteunissen.restserver.services.UserService;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/users")
 public class UserResource {
-    public UserService userService = new UserService();
+    @Inject
+    public UserService userService;
 
     @GET
     @Path("/")

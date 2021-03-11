@@ -4,13 +4,16 @@ import dev.stefanteunissen.restserver.data.PlaylistDAO;
 import dev.stefanteunissen.restserver.data.TrackDAO;
 import dev.stefanteunissen.restserver.models.Playlist;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class PlaylistService {
-    public PlaylistDAO playlistDAO = new PlaylistDAO();
-    public TrackDAO trackDAO = new TrackDAO();
+    @Inject
+    public PlaylistDAO playlistDAO;
+    @Inject
+    public TrackDAO trackDAO;
 
     /**
      * Get all playlists

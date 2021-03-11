@@ -5,6 +5,7 @@ import dev.stefanteunissen.restserver.models.User;
 import dev.stefanteunissen.restserver.services.TrackService;
 import dev.stefanteunissen.restserver.services.UserService;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,8 +15,10 @@ import java.util.Map;
 
 @Path("/tracks")
 public class TrackResource {
-    public UserService userService = new UserService();
-    public TrackService trackService = new TrackService();
+    @Inject
+    public UserService userService;
+    @Inject
+    public TrackService trackService;
 
     @GET
     @Path("/")

@@ -4,8 +4,11 @@ import dev.stefanteunissen.restserver.data.UserDAO;
 import dev.stefanteunissen.restserver.exceptions.UserIncorrectDetailsEnteredException;
 import dev.stefanteunissen.restserver.models.User;
 
+import javax.inject.Inject;
+
 public class LoginService {
-    public UserDAO userDAO = new UserDAO();
+    @Inject
+    public UserDAO userDAO;
 
     /**
      * Log the user in

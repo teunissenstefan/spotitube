@@ -5,6 +5,7 @@ import dev.stefanteunissen.restserver.requests.PostLoginRequest;
 import dev.stefanteunissen.restserver.services.LoginService;
 import dev.stefanteunissen.restserver.services.TokenService;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -17,8 +18,10 @@ import java.util.Map;
 
 @Path("/login")
 public class LoginResource {
-    public LoginService loginService = new LoginService();
-    public TokenService tokenService = new TokenService();
+    @Inject
+    public LoginService loginService;
+    @Inject
+    public TokenService tokenService;
 
     @POST
     @Path("/")

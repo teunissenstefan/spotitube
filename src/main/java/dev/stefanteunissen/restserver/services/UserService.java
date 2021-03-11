@@ -4,11 +4,14 @@ import dev.stefanteunissen.restserver.data.TokenDAO;
 import dev.stefanteunissen.restserver.data.UserDAO;
 import dev.stefanteunissen.restserver.models.User;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 
 public class UserService {
-    public UserDAO userDAO = new UserDAO();
-    public TokenDAO tokenDAO = new TokenDAO();
+    @Inject
+    public UserDAO userDAO;
+    @Inject
+    public TokenDAO tokenDAO;
 
     /**
      * Get all users
